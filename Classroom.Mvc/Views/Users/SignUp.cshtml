@@ -1,0 +1,51 @@
+﻿@model CreateUserDto
+
+<style>
+    form {
+        background-color: #00bfff;
+        margin: 0 auto;
+        width: 400px;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+<h1 style="text-align:center;color: #0b5ed7">Sign Up</h1>
+
+<form class="row g-3" style="width: 400px; background-color: #00bfff; padding: 20px; margin: 0 auto;" asp-controller="Users" asp-action="SignUp" enctype="multipart/form-data" method="post">
+    <div class="mb-3">
+        @*<label for="photo" class="form-label">Photo</label>*@
+        <input class="form-control" asp-for="Photo" type="file" name="photo">
+        <span class="text-danger" asp-validation-for="Photo"></span>
+    </div>
+    <div class="mb-3">
+        @*  <label for="name" class="form-label">Name</label>*@
+        <input class="form-control" asp-for="FirstName" type="text" name="firstname" placeholder="Firstname">
+        <span class="text-danger" asp-validation-for="FirstName"></span>
+    </div>
+    <div class="mb-3">
+        @*  <label for="name" class="form-label">Name</label>*@
+        <input class="form-control" asp-for="LastName" type="text" name="lastname" placeholder="Lastname">
+        <span class="text-danger" asp-validation-for="LastName"></span>
+    </div>
+    <div class="mb-3">
+        @*<label for="username" class="form-label">Username</label>*@
+        <input class="form-control" asp-for="Username" type="text" name="username" placeholder="Username">
+        <span class="text-danger" asp-validation-for="Username"></span>
+    </div>
+    <div class="mb-3">
+        @*<label for="username" class="form-label">Username</label>*@
+        <input class="form-control" asp-for="PhoneNumber" type="text" name="phonenumber" placeholder="Phonenumber">
+        <span class="text-danger" asp-validation-for="Username"></span>
+    </div>
+    <div class="mb-3">
+        @*<label for="password" class="form-label">Password</label>*@
+        <input class="form-control" asp-for="Password" type="password" name="password" placeholder="Password">
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+    <button class="btn btn-primary" type="submit">SignUp</button>
+     <a class="link-info" style="color: rgb(50 13 253);" asp-controller="Users" asp-action="SignIn">SignIn</a>
+</form>
+
