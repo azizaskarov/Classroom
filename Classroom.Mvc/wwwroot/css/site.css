@@ -1,18 +1,37 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.pos-right {
+    position: absolute;
+    right: 10px;
+}
+
+.pos-right-2 {
+    position: absolute;
+    right: 100px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
 }

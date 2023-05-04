@@ -52,6 +52,14 @@ public class UsersController : Controller
         return RedirectToAction("Profile");
     }
 
+
+    public async Task<IActionResult> Logout()
+    {
+        await _signInManager.SignOutAsync();
+        
+        return RedirectToAction("Index", "Home");
+    }
+
     [Authorize]
     public async Task<IActionResult> Profile()
     {
@@ -70,7 +78,7 @@ public class UsersController : Controller
     public async Task<IActionResult> SignIn([FromForm] SignInUserDto signInUserDto)
     {
         var result =
-            await _signInManager.PasswordSignInAsync(signInUserDto.Username, signInUserDto.Password, true, false);
+            await _signInManager.PasswordSignInAsync(signInUserDto.Username, signInUserDto.Password, isPersistent:true, false);
 
         if (!result.Succeeded)
         {
